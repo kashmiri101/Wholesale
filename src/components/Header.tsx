@@ -12,9 +12,9 @@ import { usePathname } from "next/navigation";
 
 const routes = [
   { href: "/", label: "HOME" },
+  { href: "/about", label: "ABOUT" },
   { href: "/products", label: "PRODUCTS" },
   { href: "/services", label: "SERVICES" },
-  { href: "/about", label: "ABOUT" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -27,42 +27,49 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="w-full">
-      {/* Red top stripe */}
-      <div className="w-full h-6 bg-red-600" />
+    <header className="w-full bg-white shadow-lg">
+      {/* Contact Information - Top Stripe */}
+      <div className="w-full bg-[#F59E0B] text-white py-4">
+        <div className="container mx-auto flex justify-between items-center px-6 sm:px-12">
+          <div className="text-sm sm:text-base lg:text-lg">
+            <span className="font-medium">📞 Call Us: +1-800-123-4567</span>
+          </div>
+          <div className="text-sm sm:text-base lg:text-lg">
+            <span className="font-medium">📧 Email: info@atharfoods.com</span>
+          </div>
+        </div>
+      </div>
 
-      {/* Logo and navigation area */}
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4">
+      {/* Logo and Navigation Area */}
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-6 px-6 md:px-12">
         {/* Logo */}
-        <div className="mb-4 md:mb-0">
+        <div className="flex items-center justify-center md:justify-start">
           <Link href="/">
-            <div className="flex flex-col items-center">
-              <div className="w-48 h-24 relative">
-                <Image
-                  src="/logo.svg"
-                  alt="Athar Foods Logo"
-                  fill
-                  priority
-                  className="h-auto w-auto"
-                />
-              </div>
+            <div className="w-48 h-24 relative">
+              <Image
+                src="/logo.svg"
+                alt="Athar Foods Logo"
+                fill
+                priority
+                className="h-auto w-auto"
+              />
             </div>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center space-x-8">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="flex space-x-8">
               {routes.map((route) => (
                 <NavigationMenuItem key={route.href}>
                   <Link href={route.href} legacyBehavior passHref>
                     <NavigationMenuLink
                       className={cn(
-                        "px-4 py-2 text-base font-medium hover:text-blue-700 border-b-0 hover:border-b-2 hover:border-blue-700 transition-colors",
+                        "px-4 py-2 text-lg font-semibold text-gray-800 hover:text-[#F59E0B] hover:border-b-2 hover:border-[#F59E0B] transition-all",
                         {
-                          "text-blue-700 border-b-2 border-blue-700 font-bold": activeLink === route.href,
-                          "text-gray-700": activeLink !== route.href,
+                          "text-[#F59E0B] border-b-2 border-[#F59E0B] font-bold": activeLink === route.href,
+                          "text-gray-600": activeLink !== route.href,
                         }
                       )}
                     >
@@ -80,21 +87,21 @@ export default function Header() {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-gray-800" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-              <nav className="flex flex-col gap-4 mt-8">
+            <SheetContent side="right" className="bg-white shadow-lg">
+              <nav className="flex flex-col gap-6 mt-8">
                 {routes.map((route) => (
                   <Link
                     key={route.href}
                     href={route.href}
                     className={cn(
-                      "text-lg font-medium transition-colors hover:text-blue-700",
+                      "text-lg font-medium text-gray-800 transition-colors hover:text-[#F59E0B]",
                       {
-                        "text-blue-700 font-bold": activeLink === route.href,
-                        "text-gray-700": activeLink !== route.href,
+                        "text-[#F59E0B] font-bold": activeLink === route.href,
+                        "text-gray-600": activeLink !== route.href,
                       }
                     )}
                   >
@@ -107,7 +114,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Bottom border */}
+      {/* Bottom Border */}
       <div className="w-full h-px bg-gray-200" />
     </header>
   );

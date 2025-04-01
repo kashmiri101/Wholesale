@@ -7,147 +7,284 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Carousel */}
+   
       <section className="w-full relative">
-        <Carousel className="w-full">
-          <CarouselContent>
-            <CarouselItem>
-              <div className="relative h-[50vh] md:h-[70vh] w-full">
-                <Image
-                  src="https://ext.same-assets.com/3330872014/2085562980.jpeg"
-                  alt="Premium Beef"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
-                  <div className="container mx-auto px-6">
-                    <div className="max-w-lg p-6 bg-blue-900/80 text-white">
-                      <h2 className="text-2xl md:text-3xl font-bold mb-3">Imported Beef</h2>
-                      <p className="text-sm md:text-base">
-                        Our relationships with free-range farms in Australia, N.Z., Uruguay and Chile deliver you the highest quality beef.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+  <Carousel className="w-full">
+    <CarouselContent>
+      {/* Slide 1 */}
+      <CarouselItem>
+        <div className="relative h-[50vh] md:h-[70vh] w-full">
+          <Image
+            src="https://ext.same-assets.com/3330872014/2085562980.jpeg" // Replace with a stock image URL
+            alt="Premium Beef"
+            fill
+            className="object-cover rounded-lg shadow-lg"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F59E0B]/60 to-transparent flex items-center">
+            <div className="container mx-auto px-6">
+              <div className="max-w-lg p-6 bg-gradient-to-br from-yellow-400 to-red-500 text-white rounded-3xl shadow-2xl">
+                <h2 className="text-4xl font-extrabold mb-3">Premium Beef</h2>
+                <p className="text-lg font-medium">
+                  High-quality beef sourced from trusted farms worldwide.
+                </p>
               </div>
-            </CarouselItem>
-            <CarouselItem>
-              <div className="relative h-[50vh] md:h-[70vh] w-full">
-                <Image
-                  src="https://ext.same-assets.com/3330872014/596913524.jpeg"
-                  alt="Sustainable Seafood"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
-                  <div className="container mx-auto px-6">
-                    <div className="max-w-lg p-6 bg-blue-900/80 text-white">
-                      <h2 className="text-2xl md:text-3xl font-bold mb-3">Sustainable Seafood</h2>
-                      <p className="text-sm md:text-base">
-                        We pride ourselves on sourcing only the most sustainable seafood products from around the world.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious className="left-4" />
-          <CarouselNext className="right-4" />
-        </Carousel>
-      </section>
+            </div>
+          </div>
+        </div>
+      </CarouselItem>
 
-      {/* Content Boxes */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Products Box */}
-          <Link href="/products">
-            <Card className="h-full transition-all hover:shadow-lg overflow-hidden">
-              <div className="bg-red-600 text-white p-4">
-                <h3 className="text-xl font-bold">Products</h3>
+      {/* Slide 2 */}
+      <CarouselItem>
+        <div className="relative h-[50vh] md:h-[70vh] w-full">
+          <Image
+            src="https://ext.same-assets.com/3330872014/2085562980.jpeg" // Replace with a stock image URL
+            alt="Sustainable Seafood"
+            fill
+            className="object-cover rounded-lg shadow-lg"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F59E0B]/60 to-transparent flex items-center">
+            <div className="container mx-auto px-6">
+              <div className="max-w-lg p-6 bg-gradient-to-br from-blue-400 to-purple-600 text-white rounded-3xl shadow-2xl">
+                <h2 className="text-4xl font-extrabold mb-3">Sustainable Seafood</h2>
+                <p className="text-lg font-medium">
+                  Only the freshest and most sustainable seafood from around the world.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CarouselItem>
+
+      {/* Slide 3 */}
+      <CarouselItem>
+        <div className="relative h-[50vh] md:h-[70vh] w-full">
+          <Image
+            src="https://ext.same-assets.com/3330872014/2085562980.jpeg" // Replace with a stock image URL
+            alt="Fresh Vegetables"
+            fill
+            className="object-cover rounded-lg shadow-lg"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F59E0B]/60 to-transparent flex items-center">
+            <div className="container mx-auto px-6">
+              <div className="max-w-lg p-6 bg-gradient-to-br from-green-400 to-teal-500 text-white rounded-3xl shadow-2xl">
+                <h2 className="text-4xl font-extrabold mb-3">Fresh Vegetables</h2>
+                <p className="text-lg font-medium">
+                  Fresh produce sourced directly from trusted local farms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CarouselItem>
+    </CarouselContent>
+
+    {/* Carousel Navigation Arrows */}
+    <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-white bg-[#F59E0B]/50 hover:bg-[#F59E0B]/70 p-4 rounded-full shadow-lg" />
+    <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-white bg-[#F59E0B]/50 hover:bg-[#F59E0B]/70 p-4 rounded-full shadow-lg" />
+  </Carousel>
+</section>
+
+
+    {/* About Us Section */}
+{/* About Us Section */}
+<section className="relative py-6 bg-cover bg-center" >
+  <div className="absolute "></div> {/* Optional overlay */}
+  <div className="container mx-auto px-6 relative z-10 text-center text-black"> {/* Change text color to black */}
+    <h2 className="text-4xl font-bold mb-6">About Us</h2>
+    <p className="max-w-2xl mx-auto text-gray-700 text-lg mb-8">
+      We are a leading wholesale distributor of high-quality meat, seafood, and fresh produce. With years of experience in the import and export industry, we ensure that our customers receive only the best products sourced from trusted suppliers worldwide.
+    </p>
+    {/* About Us Button */}
+    <Link href="/about">
+      <button className="bg-[#F59E0B] text-white py-3 px-8 rounded-full hover:bg-[#F59E0B]/80 transition-all">
+        Learn More About Us
+      </button>
+    </Link>
+  </div>
+</section>
+
+   
+
+       {/* Bottom Product Section */}
+       <section className="py-6 bg-gray-50 text-center">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Featured Products</h2>
+          <p className="max-w-2xl mx-auto text-gray-700 text-lg mb-8">
+            Explore our handpicked selection of premium quality products. These are just a few of what we offer to cater to all your wholesale needs.
+          </p>
+
+          {/* Product Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {/* Product 1 */}
+            <Card className="transition-all hover:shadow-2xl hover:scale-105 rounded-lg shadow-lg">
+              <div className="bg-[#F59E0B] text-white p-4 rounded-t-lg">
+                <h3 className="text-xl font-bold">Premium Beef</h3>
               </div>
               <CardContent className="p-6">
-                <p className="mb-6">
-                  Athar Foods specializes in sourcing & supplying the best domestic & imported beef, poultry, pork, veal, lamb, mutton, goat, and seafood products. From our cornerstone AAA Canadian & imported beef products to free-range lamb and wild seafood.
+                <p className="mb-6 text-sm">
+                  Sourced from trusted farms, our premium beef is the perfect choice for quality meat.
                 </p>
                 <div className="w-full h-40 relative">
                   <Image
                     src="https://ext.same-assets.com/3330872014/3199121422.jpeg"
-                    alt="Products"
+                    alt="Premium Beef"
                     fill
                     className="object-cover rounded-md"
                   />
                 </div>
               </CardContent>
             </Card>
-          </Link>
 
-          {/* Services Box */}
-          <Link href="/services">
-            <Card className="h-full transition-all hover:shadow-lg overflow-hidden">
-              <div className="bg-blue-700 text-white p-4">
-                <h3 className="text-xl font-bold">Services</h3>
+            {/* Product 2 */}
+            <Card className="transition-all hover:shadow-2xl hover:scale-105 rounded-lg shadow-lg">
+              <div className="bg-[#F59E0B] text-white p-4 rounded-t-lg">
+                <h3 className="text-xl font-bold">Sustainable Seafood</h3>
               </div>
               <CardContent className="p-6">
-                <p className="mb-6">
-                  Import/export, sourcing & supplying top quality & unique meat and seafood products. Our brokering & commodities trading expertise is complemented by our extensive network of global relationships with suppliers & our incisive sourcing intelligence.
+                <p className="mb-6 text-sm">
+                  Only the freshest, sustainable seafood sourced from certified fisheries worldwide.
                 </p>
                 <div className="w-full h-40 relative">
                   <Image
                     src="https://ext.same-assets.com/3330872014/3604932612.jpeg"
-                    alt="Services"
+                    alt="Sustainable Seafood"
                     fill
                     className="object-cover rounded-md"
                   />
                 </div>
               </CardContent>
             </Card>
-          </Link>
 
-          {/* About Box */}
-          <Link href="/about">
-            <Card className="h-full transition-all hover:shadow-lg overflow-hidden">
-              <div className="bg-red-600 text-white p-4">
-                <h3 className="text-xl font-bold">About</h3>
+            {/* Product 3 */}
+            <Card className="transition-all hover:shadow-2xl hover:scale-105 rounded-lg shadow-lg">
+              <div className="bg-[#F59E0B] text-white p-4 rounded-t-lg">
+                <h3 className="text-xl font-bold">Fresh Vegetables</h3>
               </div>
               <CardContent className="p-6">
-                <p className="mb-6">
-                  Since its inception, Athar Foods has fast become a leader within the Meat & Seafood Trading Industries. In recent years we've also built a reputation as a top source & supplier of sustainable seafood, with close attention to the Ocean Wise program.
+                <p className="mb-6 text-sm">
+                  Fresh, locally sourced vegetables that are grown with care to provide the best taste.
                 </p>
                 <div className="w-full h-40 relative">
                   <Image
                     src="https://ext.same-assets.com/3330872014/2890302321.jpeg"
-                    alt="About"
+                    alt="Fresh Vegetables"
                     fill
                     className="object-cover rounded-md"
                   />
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Show More Button */}
+          <Link href="/products">
+            <button className="mt-6 bg-[#F59E0B] text-white py-2 px-6 rounded-full hover:bg-[#F59E0B]/80 transition-all">
+              Show More
+            </button>
           </Link>
 
-          {/* Contact Box */}
+          </div>
+      </section>
+
+
+
+      {/* Featured Products Section */}
+<section className="py-6 bg-gray-50 text-center">
+  <div className="container mx-auto px-6">
+    <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Featured Services</h2>
+    <p className="max-w-2xl mx-auto text-gray-700 text-lg mb-8">
+      Explore our handpicked selection of premium quality products. These are just a few of what we offer to cater to all your wholesale needs.
+    </p>
+
+    {/* Product Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {/* Product 1 */}
+      <Card className="transition-all hover:shadow-2xl hover:scale-105 rounded-lg shadow-lg">
+        <div className="bg-[#F59E0B] text-white p-4 rounded-t-lg">
+          <h3 className="text-xl font-bold">Premium Beef</h3>
+        </div>
+        <CardContent className="p-6">
+          <p className="mb-6 text-sm">
+            Sourced from trusted farms, our premium beef is the perfect choice for quality meat.
+          </p>
+          <div className="w-full h-40 relative">
+            <Image
+              src="https://ext.same-assets.com/3330872014/3199121422.jpeg"
+              alt="Premium Beef"
+              fill
+              className="object-cover rounded-md"
+            />
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Product 2 */}
+      <Card className="transition-all hover:shadow-2xl hover:scale-105 rounded-lg shadow-lg">
+        <div className="bg-[#F59E0B] text-white p-4 rounded-t-lg">
+          <h3 className="text-xl font-bold">Sustainable Seafood</h3>
+        </div>
+        <CardContent className="p-6">
+          <p className="mb-6 text-sm">
+            Only the freshest, sustainable seafood sourced from certified fisheries worldwide.
+          </p>
+          <div className="w-full h-40 relative">
+            <Image
+              src="https://ext.same-assets.com/3330872014/3604932612.jpeg"
+              alt="Sustainable Seafood"
+              fill
+              className="object-cover rounded-md"
+            />
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Product 3 */}
+      <Card className="transition-all hover:shadow-2xl hover:scale-105 rounded-lg shadow-lg">
+        <div className="bg-[#F59E0B] text-white p-4 rounded-t-lg">
+          <h3 className="text-xl font-bold">Fresh Vegetables</h3>
+        </div>
+        <CardContent className="p-6">
+          <p className="mb-6 text-sm">
+            Fresh, locally sourced vegetables that are grown with care to provide the best taste.
+          </p>
+          <div className="w-full h-40 relative">
+            <Image
+              src="https://ext.same-assets.com/3330872014/2890302321.jpeg"
+              alt="Fresh Vegetables"
+              fill
+              className="object-cover rounded-md"
+            />
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+
+    {/* Show More Button */}
+    <Link href="/services">
+      <button className="mt-6 bg-[#F59E0B] text-white py-2 px-6 rounded-full hover:bg-[#F59E0B]/80 transition-all">
+        Show More
+      </button>
+    </Link>
+  </div>
+</section>
+
+      {/* Contact Us Section */}
+      <section className="py-6 my-6 bg-[#F59E0B] text-center text-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
+          <p className="max-w-2xl mx-auto text-lg mb-8">
+            Have any questions or need assistance? We're here to help. Get in touch with us today!
+          </p>
+          {/* Contact Us Button */}
           <Link href="/contact">
-            <Card className="h-full transition-all hover:shadow-lg overflow-hidden">
-              <div className="bg-blue-700 text-white p-4">
-                <h3 className="text-xl font-bold">Contact</h3>
-              </div>
-              <CardContent className="p-6">
-                <p className="mb-6">
-                  From our Calgary & Vancouver offices, Athar Foods' team of Sales Brokers, Import/Export and Logistics Management specialists deliver hands-on, highly focused attention, in supplying unique, top-notch products to all our global customers.
-                </p>
-                <div className="w-full h-40 relative">
-                  <Image
-                    src="https://ext.same-assets.com/3330872014/3616530967.jpeg"
-                    alt="Contact"
-                    fill
-                    className="object-cover rounded-md"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+            <button className="bg-white text-[#F59E0B] py-3 px-8 rounded-full ">
+              Contact Us
+            </button>
           </Link>
         </div>
-      </section>
+      </section> 
+
+   
     </main>
   );
 }
