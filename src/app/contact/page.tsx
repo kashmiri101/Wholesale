@@ -12,7 +12,7 @@ export default function ContactPage() {
       <div className="container mx-auto py-8 px-4">
         {/* Header Section */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#F59E0B] mb-4">Contact Us</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#095b35] mb-4">Contact Us</h1>
           <p className="text-lg sm:text-xl max-w-lg mx-auto">
             Get in touch with us for any inquiries or to place an order. We're here to help!
           </p>
@@ -23,7 +23,7 @@ export default function ContactPage() {
           {/* Calgary Office */}
           <Card className="shadow-lg rounded-md">
             <CardContent className="p-6">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#F59E0B] mb-4">Calgary Office</h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#03468a] mb-4">Calgary Office</h2>
               <div className="space-y-4">
                 <p>
                   <span className="font-bold">Address:</span> 123 Business Way, Suite 400, Calgary, AB T2P 2V7
@@ -36,7 +36,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <div className="flex justify-center mt-6">
-                <Button className="bg-[#F59E0B] hover:bg-yellow-600 px-6 py-3">
+                <Button className="bg-[#095b35] hover:bg-[#074f26] px-6 py-3">
                   <a href="mailto:calgary@atharfoods.com" className="text-white">Contact Calgary Office</a>
                 </Button>
               </div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
           {/* Vancouver Office */}
           <Card className="shadow-lg rounded-md">
             <CardContent className="p-6">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#F59E0B] mb-4">Vancouver Office</h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#03468a] mb-4">Vancouver Office</h2>
               <div className="space-y-4">
                 <p>
                   <span className="font-bold">Address:</span> 456 West Trading Street, Richmond, BC V6X 3P6
@@ -59,7 +59,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <div className="flex justify-center mt-6">
-                <Button className="bg-[#F59E0B] hover:bg-yellow-600 px-6 py-3">
+                <Button className="bg-[#095b35] hover:bg-[#074f26] px-6 py-3">
                   <a href="mailto:vancouver@atharfoods.com" className="text-white">Contact Vancouver Office</a>
                 </Button>
               </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
 
         {/* Contact Form Section */}
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-[#F59E0B] mb-6 text-center">Send Us a Message</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-[#095b35] mb-6 text-center">Send Us a Message</h2>
           <p className="text-lg sm:text-xl mb-6 text-center">
             Have questions about our products or services? Fill out the form below, and we'll get back to you shortly.
           </p>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   id="firstName"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#095b35]"
                   placeholder="Your first name"
                 />
               </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   id="lastName"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#095b35]"
                   placeholder="Your last name"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
               <input
                 type="email"
                 id="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#095b35]"
                 placeholder="Your email address"
               />
             </div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
               <input
                 type="text"
                 id="subject"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#095b35]"
                 placeholder="Message subject"
               />
             </div>
@@ -122,13 +122,13 @@ export default function ContactPage() {
               <textarea
                 id="message"
                 rows={5}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#095b35]"
                 placeholder="Your message"
               ></textarea>
             </div>
 
             <div className="flex justify-center">
-              <Button className="bg-[#F59E0B] hover:bg-yellow-600 px-8 py-3 text-lg text-white">
+              <Button className="bg-[#095b35] hover:bg-[#074f26] px-8 py-3 text-lg text-white">
                 Send Message
               </Button>
             </div>

@@ -31,11 +31,13 @@ const products = [
 export default function ProductsPage() {
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
-      <section className="text-center py-12 bg-gradient-to-r from-yellow-500 to-orange-600 text-white">
+      {/* Header Section */}
+      <section className="text-center py-12 bg-gradient-to-r from-[#095b35] to-[#03468a] text-white">
         <h1 className="text-4xl font-bold">Our Products</h1>
         <p className="text-lg mt-2">Premium quality protein products from around the world.</p>
       </section>
 
+      {/* Product Cards Section */}
       <section className="container mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product, index) => (
           <div
@@ -46,12 +48,12 @@ export default function ProductsPage() {
               <Image src={product.image} alt={product.category} fill className="object-cover" />
             </div>
             <div className="p-6 text-center">
-              <h2 className="text-2xl font-semibold text-yellow-600">{product.category}</h2>
+              <h2 className="text-2xl font-semibold text-[#095b35]">{product.category}</h2>
               <p className="text-gray-700 mt-2">{product.description}</p>
               <ul className="mt-4 space-y-2">
                 {product.items.map((item, idx) => (
                   <li key={idx} className="text-sm text-gray-600 flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#095b35] rounded-full"></span>
                     {item}
                   </li>
                 ))}
@@ -61,12 +63,13 @@ export default function ProductsPage() {
         ))}
       </section>
 
-      <section className="text-center py-12 bg-gray-200">
-        <h2 className="text-3xl font-bold text-yellow-600">Looking for Bulk Orders?</h2>
-        <p className="text-gray-700 mt-2">Contact us for custom orders and wholesale pricing.</p>
+      {/* Bulk Orders Section */}
+      <section className="text-center my-6 py-12 bg-[#03468a] text-white">
+        <h2 className="text-3xl font-bold">Looking for Bulk Orders?</h2>
+        <p className="text-gray-200 mt-2">Contact us for custom orders and wholesale pricing.</p>
         <Link
           href="/contact"
-          className="mt-4 inline-block bg-yellow-600 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:bg-yellow-500"
+          className="mt-4 inline-block bg-[#095b35] text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:bg-[#03468a]"
         >
           Contact Us
         </Link>

@@ -2,9 +2,18 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import Image from "next/image";
@@ -29,25 +38,25 @@ export default function Header() {
   return (
     <header className="w-full bg-white shadow-lg">
       {/* Contact Information - Top Stripe */}
-      <div className="w-full bg-[#F59E0B] text-white py-4">
+      <div className="w-full bg-[#03468a] text-white py-4">
         <div className="container mx-auto flex justify-between items-center px-6 sm:px-12">
-          <div className="text-sm sm:text-base lg:text-lg">
-            <span className="font-medium">📞 Call Us: +1-800-123-4567</span>
+          <div className="text-sm sm:text-base lg:text-lg font-medium">
+            📞 Call Us: +1-800-123-4567
           </div>
-          <div className="text-sm sm:text-base lg:text-lg">
-            <span className="font-medium">📧 Email: info@atharfoods.com</span>
+          <div className="text-sm sm:text-base lg:text-lg font-medium">
+            📧 Email: info@atharfoods.com
           </div>
         </div>
       </div>
 
-      {/* Logo and Navigation Area */}
+      {/* Logo and Navigation */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-6 px-6 md:px-12">
         {/* Logo */}
         <div className="flex items-center justify-center md:justify-start">
           <Link href="/">
-            <div className="w-48 h-24 relative">
+            <div className="w-52 h-32 relative">
               <Image
-                src="/logo.svg"
+                src="/3x.png"
                 alt="Athar Foods Logo"
                 fill
                 priority
@@ -66,10 +75,12 @@ export default function Header() {
                   <Link href={route.href} legacyBehavior passHref>
                     <NavigationMenuLink
                       className={cn(
-                        "px-4 py-2 text-lg font-semibold text-gray-800 hover:text-[#F59E0B] hover:border-b-2 hover:border-[#F59E0B] transition-all",
+                        "px-4 py-2 text-lg font-semibold transition-all",
                         {
-                          "text-[#F59E0B] border-b-2 border-[#F59E0B] font-bold": activeLink === route.href,
-                          "text-gray-600": activeLink !== route.href,
+                          "text-[#095b35] border-b-2 border-[#095b35] font-bold":
+                            activeLink === route.href,
+                          "text-gray-700 hover:text-[#095b35] hover:border-b-2 hover:border-[#095b35]":
+                            activeLink !== route.href,
                         }
                       )}
                     >
@@ -98,10 +109,11 @@ export default function Header() {
                     key={route.href}
                     href={route.href}
                     className={cn(
-                      "text-lg font-medium text-gray-800 transition-colors hover:text-[#F59E0B]",
+                      "text-lg font-medium transition-colors",
                       {
-                        "text-[#F59E0B] font-bold": activeLink === route.href,
-                        "text-gray-600": activeLink !== route.href,
+                        "text-[#095b35] font-bold": activeLink === route.href,
+                        "text-gray-700 hover:text-[#095b35]":
+                          activeLink !== route.href,
                       }
                     )}
                   >

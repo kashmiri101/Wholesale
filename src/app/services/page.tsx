@@ -23,31 +23,34 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-amber-50 text-gray-900">
+    <main className="min-h-screen bg-gray-50 text-gray-900">
       <div className="container mx-auto py-12 px-6">
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-amber-600">Our Services</h1>
+          <h1 className="text-4xl font-bold text-[#095b35]">Our Services</h1>
           <p className="mt-4 text-lg text-gray-700">We specialize in import/export, sourcing, and supplying high-quality meat and seafood products.</p>
         </div>
         
+        {/* Country Flags Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {countryFlags.map((item, index) => (
             <div key={index} className="flex items-center gap-3 p-4 bg-white shadow-md rounded-lg">
               <Image src={item.flag} alt={item.country} width={30} height={20} className="rounded-sm" />
-              <span className="font-medium">{item.country}</span>
+              <span className="font-medium text-[#03468a]">{item.country}</span>
             </div>
           ))}
         </div>
 
+        {/* Accordion Section */}
         <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+          {/* Import/Export Accordion */}
           <AccordionItem value="import-export">
-            <AccordionTrigger className="text-xl font-bold text-amber-700">Import/Export</AccordionTrigger>
+            <AccordionTrigger className="text-xl font-bold text-[#095b35]">Import/Export</AccordionTrigger>
             <AccordionContent>
               <p className="text-gray-700">We offer competitive global sourcing with extensive supplier relationships.</p>
               <ul className="mt-4 grid grid-cols-1 gap-2">
                 {services.map((service, index) => (
                   <li key={index} className="flex items-center gap-2 text-gray-800">
-                    <div className="w-2 h-2 bg-amber-700 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#095b35] rounded-full"></div>
                     {service}
                   </li>
                 ))}
@@ -55,15 +58,17 @@ export default function ServicesPage() {
             </AccordionContent>
           </AccordionItem>
 
+          {/* Sourcing/Supplying Accordion */}
           <AccordionItem value="sourcing-supplying">
-            <AccordionTrigger className="text-xl font-bold text-amber-700">Sourcing/Supplying</AccordionTrigger>
+            <AccordionTrigger className="text-xl font-bold text-[#095b35]">Sourcing/Supplying</AccordionTrigger>
             <AccordionContent>
               <p className="text-gray-700">We ensure top-quality sourcing and seamless supply chain solutions for meat and seafood.</p>
             </AccordionContent>
           </AccordionItem>
 
+          {/* Brokering/Intelligence Accordion */}
           <AccordionItem value="brokering-intelligence">
-            <AccordionTrigger className="text-xl font-bold text-amber-700">Brokering/Intelligence</AccordionTrigger>
+            <AccordionTrigger className="text-xl font-bold text-[#095b35]">Brokering/Intelligence</AccordionTrigger>
             <AccordionContent>
               <p className="text-gray-700">Our expertise in market intelligence and brokering helps secure the best deals for our clients.</p>
             </AccordionContent>
