@@ -11,7 +11,7 @@ const products = [
   {
     category: "Premium Beef",
     description: "Sourced from the finest farms globally with custom cutting options",
-    image: "/cae5856b-55bd-4f02-9f92-b30bbc72de59.jfif",
+    image: "./cae5856b-55bd-4f02-9f92-b30bbc72de59.jfif",
     content: `Welcome to our company, where we pride ourselves on delivering the finest beef sourced from across the globe. While we 
     have a strong commitment to Canadian beef, our extensive supply network allows us to meet the diverse needs of our 
     customers by sourcing exceptional beef from various countries renowned for their quality. We understand that quality, 
@@ -21,7 +21,7 @@ const products = [
   {
     category: "Seafood Excellence",
     description: "Wild-caught & farmed options with complete customization",
-    image: "/9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
+    image: "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
     content: `Welcome to our seafood section, where we proudly offer an extensive selection of the freshest and highest-quality seafood 
     sourced from oceans and farms around the globe. Our shrimp collection is unmatched, featuring all sizes available with 
     shell, peeled, and deveined options...`,
@@ -30,7 +30,7 @@ const products = [
   {
     category: "Premium Poultry",
     description: "Canadian & imported fresh/frozen options",
-    image: "/66d63f64-4171-4072-8e0f-68325b834508.jfif",
+    image: "./66d63f64-4171-4072-8e0f-68325b834508.jfif",
     content: `Welcome to our poultry section, where we specialize in providing a comprehensive range of poultry products tailored to 
     meet the diverse needs of our customers. Our selection includes all kinds of poultry, from light fowl to heavy fowl...`,
     items: ["Free-range Chicken", "Organic Turkey", "Duck"]
@@ -38,7 +38,7 @@ const products = [
   {
     category: "Lamb & Goat",
     description: "Whole carcasses to specialty cuts",
-    image: "/f8d5ff4f-dbed-44d1-b5c0-1cdf259cd87c.jfif",
+    image: "./f8d5ff4f-dbed-44d1-b5c0-1cdf259cd87c.jfif",
     content: `Welcome to our Lamb and Goat section, where we take pride in being the best supplier for traders and distributors seeking 
     high-quality lamb and goat products. Our extensive selection encompasses everything from whole carcasses to a diverse 
     array of cuts...`,

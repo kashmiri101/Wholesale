@@ -15,7 +15,7 @@ export default function Home() {
             <CarouselItem>
               <div className="relative h-[50vh] md:h-[70vh] w-full">
                 <Image
-                  src="/1.jpeg"
+                  src="./1.jpeg"
                   alt="Premium Beef Sourcing"
                   fill
                   className="object-cover rounded-lg shadow-lg"
@@ -38,7 +38,7 @@ export default function Home() {
             <CarouselItem>
               <div className="relative h-[50vh] md:h-[70vh] w-full">
                 <Image
-                  src="/62075056-5420-42ca-95a9-31f1ad5362d0.jfif"
+                  src="./62075056-5420-42ca-95a9-31f1ad5362d0.jfif"
                   alt="Sustainable Seafood"
                   fill
                   className="object-cover rounded-lg shadow-lg"
@@ -60,7 +60,7 @@ export default function Home() {
             <CarouselItem>
               <div className="relative h-[50vh] md:h-[70vh] w-full">
                 <Image
-                  src="/9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif"
+                  src="./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif"
                   alt="Quality Poultry"
                   fill
                   className="object-cover rounded-lg shadow-lg"
@@ -169,25 +169,25 @@ export default function Home() {
               {
                 title: "Beef",
                 desc: "Premium global sourcing with custom cuts",
-                img: "/1.jpeg",
+                img: "./1.jpeg",
                 color: "#095b35"
               },
               {
                 title: "Seafood",
                 desc: "Wild-caught & farmed options available",
-                img: "/62075056-5420-42ca-95a9-31f1ad5362d0.jfif",
+                img: "./62075056-5420-42ca-95a9-31f1ad5362d0.jfif",
                 color: "#03468a"
               },
               {
                 title: "Poultry",
                 desc: "Canadian & imported fresh/frozen",
-                img: "/9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
+                img: "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
                 color: "#6b2d09"
               },
               {
                 title: "Lamb & Goat",
                 desc: "Whole carcasses to specialty cuts",
-                img: "/45e46d38-d029-4a33-98e5-1e931aae4cbf.jfif",
+                img: "./45e46d38-d029-4a33-98e5-1e931aae4cbf.jfif",
                 color: "#4a148c"
               }
             ].map(({ title, desc, img, color }) => (

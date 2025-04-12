@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/">
               <div className="w-48 h-16 relative">
                 <Image
-                  src="/3x.png" // Ensure this path is correct
+                  src="./3x.png" // Ensure this path is correct
                   alt="Bostan Group Logo"
                   width={192}
                   height={64}

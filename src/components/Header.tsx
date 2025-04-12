@@ -58,7 +58,7 @@ export default function Header() {
           <Link href="/">
             <div className="w-52 h-32 relative">
               <Image
-                src="/3x.png"
+                src="./3x.png"
                 alt="Athar Foods Logo"
                 fill
                 priority
