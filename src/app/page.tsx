@@ -94,9 +94,9 @@ export default function Home() {
         <Carousel>
           <CarouselContent>
             {[
-              "/9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
-              "/9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
-              "/62075056-5420-42ca-95a9-31f1ad5362d0.jfif"
+              "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
+              "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
+              "./62075056-5420-42ca-95a9-31f1ad5362d0.jfif"
             ].map((img, index) => (
               <CarouselItem key={index}>
                 <div className="relative h-96">
