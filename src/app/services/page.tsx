@@ -10,14 +10,21 @@ export const metadata = {
 
 export default function ServicesPage() {
   const countryFlags = [
-    { country: "Uruguay", flag: "/1440469565.png" },
-    { country: "Chile", flag: "/661570747.png" },
-    { country: "Brazil", flag: "/1490482996.png" },
-    { country: "Argentina", flag: "/3674865306.png" },
-    { country: "Canada", flag: "/canada-flag.png" },
-    { country: "Australia", flag: "/australia-flag.png" },
-    { country: "New Zealand", flag: "/nz-flag.png" },
-    { country: "Norway", flag: "/norway-flag.png" },
+   
+    
+      { country: "Uruguay", flag: "https://flagcdn.com/w80/uy.png" },
+      { country: "Chile", flag: "https://flagcdn.com/w80/cl.png" },
+      { country: "Brazil", flag: "https://flagcdn.com/w80/br.png" },
+      { country: "Argentina", flag: "https://flagcdn.com/w80/ar.png" },
+      { country: "Canada", flag: "https://flagcdn.com/w80/ca.png" },
+      { country: "Australia",flag: "https://flagcdn.com/w80/au.png" },
+      { country: "New Zealand", flag: "https://flagcdn.com/w80/nz.png" },
+      { country: "Norway", flag: "https://flagcdn.com/w80/no.png" }
+    
+    
+ 
+
+
   ];
 
   const services = {
