@@ -12,14 +12,14 @@ export default function ServicesPage() {
   const countryFlags = [
    
     
-      { country: "Uruguay", flag: "https://flagcdn.com/w80/uy.png" },
-      { country: "Chile", flag: "https://flagcdn.com/w80/cl.png" },
-      { country: "Brazil", flag: "https://flagcdn.com/w80/br.png" },
-      { country: "Argentina", flag: "https://flagcdn.com/w80/ar.png" },
-      { country: "Canada", flag: "https://flagcdn.com/w80/ca.png" },
-      { country: "Australia",flag: "https://flagcdn.com/w80/au.png" },
-      { country: "New Zealand", flag: "https://flagcdn.com/w80/nz.png" },
-      { country: "Norway", flag: "https://flagcdn.com/w80/no.png" }
+      { country: "Uruguay", flag: "./uy.png" },
+      { country: "Chile", flag: "./cl.png" },
+      { country: "Brazil", flag: "./br.png" },
+      { country: "Argentina", flag: "./ar.png" },
+      { country: "Canada", flag: "./ca.png" },
+      { country: "Australia",flag: "./au.png" },
+      { country: "New Zealand", flag: "./nz.png" },
+      { country: "Norway", flag: "./no.png" }
     
     
  
