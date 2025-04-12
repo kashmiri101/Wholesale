@@ -40,12 +40,14 @@ export default function Header() {
       {/* Contact Information - Top Stripe */}
       <div className="w-full bg-[#03468a] text-white py-4">
         <div className="container mx-auto flex justify-between items-center px-6 sm:px-12">
-          <div className="text-sm sm:text-base lg:text-lg font-medium">
-            📞 Call Us: +1-800-123-4567
-          </div>
-          <div className="text-sm sm:text-base lg:text-lg font-medium">
-            📧 Email: info@atharfoods.com
-          </div>
+        <div className="text-sm sm:text-base lg:text-lg font-medium">
+  📞 Call Us: 587-717-8930
+</div>
+<div className="text-sm sm:text-base lg:text-lg font-medium">
+  📧 Email: info@bostangroup.com
+</div>
+
+
         </div>
       </div>
 

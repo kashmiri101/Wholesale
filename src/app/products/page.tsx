@@ -1,78 +1,162 @@
 import Image from "next/image";
 import Link from "next/link";
+import { RiFacebookFill, RiTwitterFill, RiLinkedinFill, RiInstagramFill } from "react-icons/ri";
 
 export const metadata = {
-  title: "Products | Athar Foods",
+  title: "Products | Bostan Group Inc.",
   description: "Top quality meat and seafood products from around the world.",
 };
 
 const products = [
   {
-    category: "Beef",
-    description:
-      "Our premium beef products are sourced from the finest farms around the world.",
-    image: "https://ext.same-assets.com/3330872014/2085562980.jpeg",
-    items: ["AAA Canadian Beef", "Wagyu Beef", "Angus Beef"],
+    category: "Premium Beef",
+    description: "Sourced from the finest farms globally with custom cutting options",
+    image: "/cae5856b-55bd-4f02-9f92-b30bbc72de59.jfif",
+    content: `Welcome to our company, where we pride ourselves on delivering the finest beef sourced from across the globe. While we 
+    have a strong commitment to Canadian beef, our extensive supply network allows us to meet the diverse needs of our 
+    customers by sourcing exceptional beef from various countries renowned for their quality. We understand that quality, 
+    safety, and consistency are paramount...`,
+    items: ["AAA Canadian Beef", "Wagyu Beef", "Angus Beef"]
   },
   {
-    category: "Poultry",
-    description: "We source the highest quality poultry products from certified suppliers.",
-    image: "https://ext.same-assets.com/3330872014/4158541089.jpeg",
-    items: ["Free-range Chicken", "Organic Turkey", "Duck"],
+    category: "Seafood Excellence",
+    description: "Wild-caught & farmed options with complete customization",
+    image: "/9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
+    content: `Welcome to our seafood section, where we proudly offer an extensive selection of the freshest and highest-quality seafood 
+    sourced from oceans and farms around the globe. Our shrimp collection is unmatched, featuring all sizes available with 
+    shell, peeled, and deveined options...`,
+    items: ["Wild Salmon", "Tuna", "Lobster", "Shrimp Varieties"]
   },
   {
-    category: "Seafood",
-    description: "Sustainable seafood options sourced from responsible fisheries.",
-    image: "https://ext.same-assets.com/3330872014/596913524.jpeg",
-    items: ["Wild-caught Salmon", "Tuna", "Lobster"],
+    category: "Premium Poultry",
+    description: "Canadian & imported fresh/frozen options",
+    image: "/66d63f64-4171-4072-8e0f-68325b834508.jfif",
+    content: `Welcome to our poultry section, where we specialize in providing a comprehensive range of poultry products tailored to 
+    meet the diverse needs of our customers. Our selection includes all kinds of poultry, from light fowl to heavy fowl...`,
+    items: ["Free-range Chicken", "Organic Turkey", "Duck"]
   },
+  {
+    category: "Lamb & Goat",
+    description: "Whole carcasses to specialty cuts",
+    image: "/f8d5ff4f-dbed-44d1-b5c0-1cdf259cd87c.jfif",
+    content: `Welcome to our Lamb and Goat section, where we take pride in being the best supplier for traders and distributors seeking 
+    high-quality lamb and goat products. Our extensive selection encompasses everything from whole carcasses to a diverse 
+    array of cuts...`,
+    items: ["Whole Carcasses", "Specialty Cuts", "Skinned/Skin-on Options"]
+  }
 ];
 
 export default function ProductsPage() {
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
-      {/* Header Section */}
-      <section className="text-center py-12 bg-gradient-to-r from-[#095b35] to-[#03468a] text-white">
-        <h1 className="text-4xl font-bold">Our Products</h1>
-        <p className="text-lg mt-2">Premium quality protein products from around the world.</p>
+      {/* Hero Section */}
+      <section className="text-center py-20 bg-gradient-to-r from-[#095b35] to-[#03468a] text-white">
+        <div className="container mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Premium Products</h1>
+          <p className="text-lg max-w-2xl mx-auto">
+            Quality meat and seafood solutions for distributors, wholesalers, and foodservice providers
+          </p>
+        </div>
       </section>
 
-      {/* Product Cards Section */}
-      <section className="container mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105"
-          >
-            <div className="relative w-full h-48">
-              <Image src={product.image} alt={product.category} fill className="object-cover" />
+      {/* Product Sections */}
+      {products.map((product, index) => (
+        <section key={index} className={`py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+              <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={product.image}
+                  alt={product.category}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div className="p-6 text-center">
-              <h2 className="text-2xl font-semibold text-[#095b35]">{product.category}</h2>
-              <p className="text-gray-700 mt-2">{product.description}</p>
-              <ul className="mt-4 space-y-2">
-                {product.items.map((item, idx) => (
-                  <li key={idx} className="text-sm text-gray-600 flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-[#095b35] rounded-full"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+              <h2 className="text-3xl font-bold text-[#095b35] mb-4">{product.category}</h2>
+              <p className="text-gray-600 mb-6">{product.content}</p>
+              <div className="bg-[#f8fafc] p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3">Key Offerings:</h3>
+                <ul className="space-y-2">
+                  {product.items.map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-gray-700">
+                      <span className="w-2 h-2 bg-[#095b35] rounded-full"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        ))}
+        </section>
+      ))}
+
+      {/* About Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl text-center">
+          <h2 className="text-3xl font-bold text-[#03468a] mb-8">About Bostan Group</h2>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            At Bostan Group, we are passionate about providing high-quality meat and seafood products. 
+            Established with a commitment to excellence, we serve traders, distributors, wholesalers, 
+            and supermarkets globally. Our mission is to be your trusted partner in delivering premium 
+            products that meet the evolving needs of your customers through sustainable sourcing and 
+            rigorous quality control.
+          </p>
+        </div>
       </section>
 
-      {/* Bulk Orders Section */}
-      <section className="text-center my-6 py-12 bg-[#03468a] text-white">
-        <h2 className="text-3xl font-bold">Looking for Bulk Orders?</h2>
-        <p className="text-gray-200 mt-2">Contact us for custom orders and wholesale pricing.</p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-block bg-[#095b35] text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:bg-[#03468a]"
-        >
-          Contact Us
-        </Link>
+      {/* Contact Section */}
+      <section className="py-16 bg-[#03468a] text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-xl p-8 md:p-12 text-gray-800">
+            <h2 className="text-3xl font-bold text-[#03468a] mb-8 text-center">Contact Us</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Headquarters</h3>
+                <p className="mb-4">
+                  Unit 122-2730 -39 AVE .N.E<br />
+                  CALGARY AB, T1Y 7H6
+                </p>
+                <p className="mb-4">
+                  <strong>Business Hours:</strong><br />
+                  9am – 5pm (Mon-Fri)
+                </p>
+                <p className="mb-4">
+                  <strong>Tel:</strong> <a href="tel:587-717-8930" className="text-[#03468a]">587-717-8930</a>
+                </p>
+                <p>
+                  <strong>Email:</strong> <a href="mailto:info@bostangroup.com" className="text-[#03468a]">info@bostangroup.com</a>
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
+                <div className="flex gap-4 justify-center md:justify-start mb-8">
+                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
+                    <RiFacebookFill size={28} />
+                  </a>
+                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
+                    <RiTwitterFill size={28} />
+                  </a>
+                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
+                    <RiLinkedinFill size={28} />
+                  </a>
+                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
+                    <RiInstagramFill size={28} />
+                  </a>
+                </div>
+                <div className="text-center">
+                  <Link
+                    href="/contact"
+                    className="inline-block bg-[#095b35] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#03468a] transition-colors"
+                  >
+                    Request Wholesale Pricing
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
