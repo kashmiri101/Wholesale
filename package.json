@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0 --turbopack",
     "build": "next build",
+    "clean": "rm -rf .next/ out/",
     "start": "next start",
     "lint": "next lint"
   },
