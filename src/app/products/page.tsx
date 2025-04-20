@@ -9,6 +9,7 @@ export const metadata = {
 
 const products = [
   {
+    id: "beef",
     category: "Premium Beef",
     description: "Sourced from the finest farms globally with custom cutting options",
     image: "./cae5856b-55bd-4f02-9f92-b30bbc72de59.jfif",
@@ -19,6 +20,7 @@ const products = [
     items: ["AAA Canadian Beef", "Wagyu Beef", "Angus Beef"]
   },
   {
+    id: 'seafood',
     category: "Seafood Excellence",
     description: "Wild-caught & farmed options with complete customization",
     image: "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
@@ -28,6 +30,7 @@ const products = [
     items: ["Wild Salmon", "Tuna", "Lobster", "Shrimp Varieties"]
   },
   {
+    id: 'poultry',
     category: "Premium Poultry",
     description: "Canadian & imported fresh/frozen options",
     image: "./66d63f64-4171-4072-8e0f-68325b834508.jfif",
@@ -36,6 +39,7 @@ const products = [
     items: ["Free-range Chicken", "Organic Turkey", "Duck"]
   },
   {
+    id: 'lamb',
     category: "Lamb & Goat",
     description: "Whole carcasses to specialty cuts",
     image: "./f8d5ff4f-dbed-44d1-b5c0-1cdf259cd87c.jfif",
@@ -59,9 +63,28 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* Navigation Links */}
+      <div className="sticky top-0 z-10 bg-white shadow-md">
+        <div className="container mx-auto px-6 py-4 flex overflow-x-auto gap-4">
+          {products.map((product) => (
+            <Link 
+              key={product.id}
+              href={`#${product.id}`}
+              className="whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors"
+            >
+              {product.category}
+            </Link>
+          ))}
+        </div>
+      </div>
+
       {/* Product Sections */}
       {products.map((product, index) => (
-        <section key={index} className={`py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+        <section 
+          key={product.id}
+          id={product.id}
+          className={`py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+        >
           <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
               <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
@@ -91,7 +114,6 @@ export default function ProductsPage() {
           </div>
         </section>
       ))}
-
       {/* About Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6 max-w-4xl text-center">

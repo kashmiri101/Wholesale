@@ -22,8 +22,10 @@ import { usePathname } from "next/navigation";
 const routes = [
   { href: "/", label: "HOME" },
   { href: "/about", label: "ABOUT" },
+  { href: "/commitment", label: "COMMITMENT" },
   { href: "/products", label: "PRODUCTS" },
   { href: "/services", label: "SERVICES" },
+  { href: "/source", label: "SOURCE" },
   { href: "/contact", label: "CONTACT" },
 ];
 

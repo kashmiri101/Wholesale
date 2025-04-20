@@ -1,15 +1,37 @@
+"use client";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Globe, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { type CarouselApi } from "@/components/ui/carousel";
 
 export default function Home() {
+  // Auto-slide functionality for main carousel
+  const [api, setApi] = useState<CarouselApi>();
+  
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000); // Auto-slide every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Hero Carousel */}
+      {/* Hero Carousel with Auto-Slide */}
       <section className="w-full relative">
-        <Carousel className="w-full">
+        <Carousel 
+          className="w-full"
+          setApi={setApi}
+          opts={{
+            loop: true,
+          }}
+        >
           <CarouselContent>
             {/* Beef Slide */}
             <CarouselItem>
@@ -165,47 +187,58 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-[#03468a] mb-12 text-center">Our Core Products</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Beef",
-                desc: "Premium global sourcing with custom cuts",
-                img: "./1.jpeg",
-                color: "#095b35"
-              },
-              {
-                title: "Seafood",
-                desc: "Wild-caught & farmed options available",
-                img: "./62075056-5420-42ca-95a9-31f1ad5362d0.jfif",
-                color: "#03468a"
-              },
-              {
-                title: "Poultry",
-                desc: "Canadian & imported fresh/frozen",
-                img: "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
-                color: "#6b2d09"
-              },
-              {
-                title: "Lamb & Goat",
-                desc: "Whole carcasses to specialty cuts",
-                img: "./45e46d38-d029-4a33-98e5-1e931aae4cbf.jfif",
-                color: "#4a148c"
-              }
-            ].map(({ title, desc, img, color }) => (
-              <Card key={title} className="group overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-                <div className="relative h-48">
-                  <Image
-                    src={img}
-                    alt={title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="p-6" style={{ backgroundColor: color }}>
-                  <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-                  <p className="text-gray-100 text-sm">{desc}</p>
-                </div>
-              </Card>
-            ))}
+         
+{[
+
+{
+  id: "poultry",
+  title: "Poultry",
+  desc: "Canadian & imported fresh/frozen",
+  img: "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
+  color: "#6b2d09"
+},
+  {
+    id: "beef",
+    title: "Beef",
+    desc: "Premium global sourcing with custom cuts",
+    img: "./1.jpeg",
+    color: "#095b35"
+  },
+ 
+  
+  {
+    id: "lamb",
+    title: "Lamb & Goat",
+    desc: "Whole carcasses to specialty cuts",
+    img: "./45e46d38-d029-4a33-98e5-1e931aae4cbf.jfif",
+    color: "#4a148c"
+  },
+
+  {
+    id: "seafood",
+    title: "Seafood",
+    desc: "Wild-caught & farmed options available",
+    img: "./62075056-5420-42ca-95a9-31f1ad5362d0.jfif",
+    color: "#03468a"
+  },
+].map(({ id, title, desc, img, color }) => (
+  <Link href={`/products#${id}`} key={id}>
+    <Card className="group overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer">
+      <div className="relative h-48">
+        <Image
+          src={img}
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform"
+        />
+      </div>
+      <div className="p-6" style={{ backgroundColor: color }}>
+        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+        <p className="text-gray-100 text-sm">{desc}</p>
+      </div>
+    </Card>
+  </Link>
+))}
           </div>
         </div>
       </section>
