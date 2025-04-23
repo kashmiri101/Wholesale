@@ -244,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-16 bg-[#03468a] text-white">
+      <section className="py-16 my-8 bg-[#03468a] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-12">Why Choose Bostan Group?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -263,43 +263,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-4xl font-bold text-[#03468a] mb-6">Contact Our Team</h2>
-                <div className="space-y-4 text-gray-600">
-                  <p>
-                    <strong>Address:</strong><br/>
-                    Unit 122-2730 -39 AVE N.E,<br/>
-                    CALGARY AB, T1Y 7H6
-                  </p>
-                  <p>
-                    <strong>Business Hours:</strong><br/>
-                    9am – 5pm (Mon-Fri)
-                  </p>
-                  <p>
-                    <strong>Tel:</strong> <a href="tel:587-717-8930" className="text-[#095b35] hover:underline">587-717-8930</a>
-                  </p>
-                  <p>
-                    <strong>Email:</strong> <a href="mailto:info@bostangroup.com" className="text-[#095b35] hover:underline">info@bostangroup.com</a>
-                  </p>
-                </div>
-              </div>
-              <div className="bg-[#f8fafc] rounded-xl p-6">
-                <h3 className="text-xl font-bold text-[#03468a] mb-4">Ready to Partner With Us?</h3>
-                <p className="mb-6">Complete our supplier inquiry form to discuss your requirements:</p>
-                <Link href="/contact">
-                  <button className="w-full bg-[#095b35] text-white py-3 px-6 rounded-lg hover:bg-[#03468a] transition-all">
-                    Get Started Now
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    
     </main>
   );
 }

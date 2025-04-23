@@ -95,65 +95,7 @@ export default function AboutPage() {
 
      
 
-      {/* Enhanced Contact Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="bg-[#095b35] text-white p-12 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Headquarters</h3>
-                    <p>
-                      Unit 122-2730 -39 AVE .N.E<br />
-                      CALGARY AB, T1Y 7H6
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Business Hours</h3>
-                    <p>9am – 5pm (Mon-Fri)</p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Contact</h3>
-                    <p>
-                      <a href="tel:587-717-8930" className="hover:underline">587-717-8930</a><br />
-                      <a href="mailto:info@bostangroup.com" className="hover:underline">info@bostangroup.com</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-12">
-                <div className="flex flex-col h-full justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#03468a] mb-6">Connect With Us</h3>
-                    <div className="flex gap-6 mb-8">
-                      <a href="#" className="text-[#03468a] hover:text-[#095b35] transition-colors">
-                        <FaFacebook size={28} />
-                      </a>
-                      <a href="#" className="text-[#03468a] hover:text-[#095b35] transition-colors">
-                        <FaTwitter size={28} />
-                      </a>
-                      <a href="#" className="text-[#03468a] hover:text-[#095b35] transition-colors">
-                        <FaLinkedin size={28} />
-                      </a>
-                      <a href="#" className="text-[#03468a] hover:text-[#095b35] transition-colors">
-                        <FaInstagram size={28} />
-                      </a>
-                    </div>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="inline-block bg-[#03468a] text-white py-3 px-8 rounded-lg text-lg font-semibold shadow-md hover:bg-[#095b35] transition-colors text-center"
-                  >
-                    Contact Form
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  
     </main>
   );
 }

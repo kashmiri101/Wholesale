@@ -131,58 +131,7 @@ const products = [
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-[#03468a] text-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-xl p-8 md:p-12 text-gray-800">
-            <h2 className="text-3xl font-bold text-[#03468a] mb-8 text-center">Contact Us</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Headquarters</h3>
-                <p className="mb-4">
-                  Unit 122-2730 -39 AVE .N.E<br />
-                  CALGARY AB, T1Y 7H6
-                </p>
-                <p className="mb-4">
-                  <strong>Business Hours:</strong><br />
-                  9am – 5pm (Mon-Fri)
-                </p>
-                <p className="mb-4">
-                  <strong>Tel:</strong> <a href="tel:587-717-8930" className="text-[#03468a]">587-717-8930</a>
-                </p>
-                <p>
-                  <strong>Email:</strong> <a href="mailto:info@bostangroup.com" className="text-[#03468a]">info@bostangroup.com</a>
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
-                <div className="flex gap-4 justify-center md:justify-start mb-8">
-                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                    <RiFacebookFill size={28} />
-                  </a>
-                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                    <RiTwitterFill size={28} />
-                  </a>
-                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                    <RiLinkedinFill size={28} />
-                  </a>
-                  <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                    <RiInstagramFill size={28} />
-                  </a>
-                </div>
-                <div className="text-center">
-                  <Link
-                    href="/contact"
-                    className="inline-block bg-[#095b35] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#03468a] transition-colors"
-                  >
-                    Request Wholesale Pricing
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  
     </main>
   );
 }

@@ -111,7 +111,7 @@ export default function CommitmentPage() {
       </section>
 
       {/* Team Commitment */}
-      <section className="py-16 bg-gradient-to-r from-[#095b35] to-[#03468a] text-white">
+      <section className="py-16 my-10 bg-gradient-to-r from-[#095b35] to-[#03468a] text-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6">Our Team's Promise</h2>
@@ -155,12 +155,7 @@ export default function CommitmentPage() {
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Experience the Bostan Group difference - where quality, reliability, and partnership come together to deliver exceptional results.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-gradient-to-r from-[#095b35] to-[#03468a] text-white py-3 px-8 rounded-lg font-semibold hover:opacity-90 transition-opacity"
-          >
-            Contact Our Team
-          </Link>
+         
         </div>
       </section>
     </main>

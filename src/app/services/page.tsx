@@ -151,54 +151,7 @@ export default function ServicesPage() {
           </Accordion>
         </div>
 
-        {/* Contact Section */}
-        <section className="mt-16 bg-white rounded-xl shadow-xl p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-2xl font-bold text-[#03468a] mb-4">Contact Information</h2>
-              <div className="space-y-3 text-gray-700">
-                <p>
-                  <strong>Address:</strong><br />
-                  Unit 122-2730 -39 AVE .N.E<br />
-                  CALGARY AB, T1Y 7H6
-                </p>
-                <p>
-                  <strong>Business Hours:</strong><br />
-                  9am – 5pm (Mon-Fri)
-                </p>
-                <p>
-                  <strong>Tel:</strong> <a href="tel:587-717-8930" className="text-[#095b35]">587-717-8930</a>
-                </p>
-                <p>
-                  <strong>Email:</strong> <a href="mailto:info@bostangroup.com" className="text-[#095b35]">info@bostangroup.com</a>
-                </p>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-[#03468a] mb-4">Connect With Us</h2>
-              <div className="flex gap-4 mb-6">
-                <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                  <RiFacebookFill size={28} />
-                </a>
-                <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                  <RiTwitterFill size={28} />
-                </a>
-                <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                  <RiLinkedinFill size={28} />
-                </a>
-                <a href="#" className="text-[#03468a] hover:text-[#095b35]">
-                  <RiInstagramFill size={28} />
-                </a>
-              </div>
-              <Link
-                href="/contact"
-                className="inline-block bg-[#095b35] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#03468a] transition-colors"
-              >
-                Request Service Consultation
-              </Link>
-            </div>
-          </div>
-        </section>
+     
       </section>
     </main>
   );
