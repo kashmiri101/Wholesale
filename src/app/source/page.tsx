@@ -1,10 +1,9 @@
 "use client";
 import { NextPage } from "next";
-import { FaMapMarkerAlt, FaGlobeAmericas, FaShippingFast, FaCertificate } from "react-icons/fa";
-import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
 import { useState } from "react";
+import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
 
-const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
+const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 interface Country {
   name: string;
@@ -15,227 +14,234 @@ interface Country {
 
 const ProductSourcesPage: NextPage = () => {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+  const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
+    coordinates: [0, 20],
+    zoom: 1,
+  });
 
   const sourceCountries: Country[] = [
-    {
-      name: "Italy",
-      products: ["Parma Ham", "Parmigiano Reggiano"],
-      coordinates: [12.5, 42.5],
-      details: "Renowned for artisanal cured meats and aged cheeses from Northern Italy."
-    },
-    {
-      name: "New Zealand",
-      products: ["Lamb", "Grass-fed Beef"],
-      coordinates: [172.5, -41.5],
-      details: "Free-range livestock raised in pristine environments with strict welfare standards."
-    },
-    {
-      name: "Australia",
-      products: ["Wagyu Beef", "Lamb"],
-      coordinates: [135, -25],
-      details: "Premium Wagyu beef and lamb from expansive Australian stations."
-    },
-    {
-      name: "Chile",
-      products: ["Salmon", "Sea Bass"],
-      coordinates: [-71, -35],
-      details: "Sustainable seafood from the cold, clean waters of Patagonia."
-    },
-    {
-      name: "Brazil",
-      products: ["Beef", "Poultry"],
-      coordinates: [-55, -10],
-      details: "Large-scale production with export-grade traceability systems."
-    },
+    { name: "Italy", products: ["Parma Ham", "Parmigiano Reggiano"], coordinates: [12.567, 42.833], details: "Renowned for artisanal cured meats and aged cheeses from Northern Italy." },
+    { name: "New Zealand", products: ["Lamb", "Grass-fed Beef"], coordinates: [174.0, -41.3], details: "Free-range livestock raised in pristine environments with strict welfare standards." },
+    { name: "Australia", products: ["Wagyu Beef", "Lamb"], coordinates: [133.775, -25.274], details: "Premium Wagyu beef and lamb from expansive Australian stations." },
+    { name: "Chile", products: ["Salmon", "Sea Bass"], coordinates: [-71.543, -35.675], details: "Sustainable seafood from the cold, clean waters of Patagonia." },
+    { name: "Brazil", products: ["Beef", "Poultry"], coordinates: [-53.2, -10.333], details: "Large-scale production with export-grade traceability systems." },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#095b35] to-[#03468a] text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Our Global Product Sources</h1>
-          <p className="text-xl max-w-2xl mx-auto">Premium quality from the world's best producers</p>
+      {/* Enhanced Hero Section */}
+      <header className="bg-gradient-to-br from-[#095b35] to-[#03468a] text-white py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+            Global Food Network
+          </h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-gray-200">
+            Connecting premium producers with world markets
+          </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
-      </section>
+      </header>
 
-      <main className="container mx-auto px-4 py-12 max-w-6xl">
-        {/* Intro */}
-        <section className="bg-white rounded-xl shadow-md p-8 mb-12">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-              <FaGlobeAmericas className="text-5xl text-[#095b35] mb-4" />
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Responsibly Sourced Worldwide</h2>
-              <p className="text-gray-600 mb-4">We partner globally to deliver premium meats and seafood.</p>
-              <p className="text-gray-600">Every source is vetted for sustainability and ethical standards.</p>
-            </div>
-            <div className="md:w-1/2">
-              <div className="relative h-64 md:h-80 bg-gray-100 rounded-lg overflow-hidden">
-                <ComposableMap className="w-full h-full">
-                  <ZoomableGroup center={[0, 20]} zoom={1}>
-                    <Geographies geography={geoUrl}>
-                      {({ geographies }) =>
-                        geographies.map((geo) => (
-                          <Geography
-                            key={geo.rsmKey}
-                            geography={geo}
-                            fill="#EAEAEC"
-                            stroke="#D6D6DA"
-                            style={{
-                              default: { outline: "none" },
-                              hover: { fill: "#E2E8F0", outline: "none" },
-                              pressed: { fill: "#E2E8F0", outline: "none" },
-                            }}
-                          />
-                        ))
-                      }
-                    </Geographies>
-                    {sourceCountries.map((country, index) => (
-                      <Marker key={country.name} coordinates={country.coordinates}>
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-12 max-w-7xl space-y-16">
+        {/* Map Section */}
+        <section className="space-y-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#095b35] to-[#03468a]">
+                Interactive Supply Map
+              </span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore our global network of trusted partners and production centers
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-6">
+            <div className="relative w-full h-[500px] bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
+              <ComposableMap
+                projection="geoMercator"
+                projectionConfig={{
+                  scale: 150,
+                  center: [0, 20],
+                }}
+                className="w-full h-full"
+              >
+                <ZoomableGroup
+                  center={position.coordinates}
+                  zoom={position.zoom}
+                  onMoveEnd={({ coordinates, zoom }) => {
+                    setPosition({ coordinates, zoom });
+                  }}
+                >
+                  <Geographies geography={geoUrl}>
+                    {({ geographies }) =>
+                      geographies.map((geo) => (
+                        <Geography
+                          key={geo.rsmKey}
+                          geography={geo}
+                          fill="#e0e7ff"
+                          stroke="#cbd5e1"
+                          strokeWidth={0.5}
+                          style={{
+                            default: { outline: "none" },
+                            hover: { fill: "#c7d2fe", cursor: "pointer" },
+                            pressed: { fill: "#a5b4fc" },
+                          }}
+                        />
+                      ))
+                    }
+                  </Geographies>
+
+                  {sourceCountries.map((country, index) => (
+                    <Marker key={country.name} coordinates={country.coordinates}>
+                      <g
+                        onClick={() => setSelectedCountry(country)}
+                        className="cursor-pointer group"
+                      >
                         <circle
                           r={6}
-                          fill={index % 2 === 0 ? "#095b35" : "#03468a"}
-                          stroke="#FFF"
+                          fill={index % 2 === 0 ? "#22c55e" : "#3b82f6"}
+                          stroke="#fff"
                           strokeWidth={2}
-                          onClick={() => setSelectedCountry(country)}
-                          className="cursor-pointer hover:r-8 transition-all"
+                          className="group-hover:scale-125 transition-transform"
                         />
-                      </Marker>
-                    ))}
-                  </ZoomableGroup>
-                </ComposableMap>
+                        <text
+                          x={8}
+                          y={4}
+                          textAnchor="start"
+                          fontSize={12}
+                          fill="#334155"
+                          className="font-semibold"
+                        >
+                          {country.name}
+                        </text>
+                      </g>
+                    </Marker>
+                  ))}
+                </ZoomableGroup>
+              </ComposableMap>
+
+              {/* Zoom Controls */}
+              <div className="absolute top-4 right-4 flex flex-col gap-2">
+                <button
+                  onClick={() => setPosition((prev) => ({ ...prev, zoom: Math.min(prev.zoom * 1.5, 8) }))}
+                  className="bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
+                >
+                  +
+                </button>
+                <button
+                  onClick={() => setPosition((prev) => ({ ...prev, zoom: Math.max(prev.zoom / 1.5, 1) }))}
+                  className="bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
+                >
+                  -
+                </button>
               </div>
             </div>
+
+            {/* Selected Country Details */}
+            {selectedCountry && (
+              <div className="mt-8 bg-white border-l-4 border-[#095b35] p-6 rounded-lg shadow-lg">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{selectedCountry.name}</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2 text-[#03468a]">Key Products</h4>
+                        <ul className="space-y-2">
+                          {selectedCountry.products.map((product) => (
+                            <li key={product} className="flex items-center text-gray-600">
+                              <span className="w-2 h-2 bg-[#095b35] rounded-full mr-2" />
+                              {product}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2 text-[#03468a]">Production Details</h4>
+                        <p className="text-gray-600 leading-relaxed">{selectedCountry.details}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setSelectedCountry(null)}
+                    className="text-gray-400 hover:text-gray-600 transition"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* Country Cards */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">Our Key Sourcing Countries</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sourceCountries.map((country, index) => (
-              <div
-                key={country.name}
-                className={`bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer ${
-                  selectedCountry?.name === country.name ? 'ring-2 ring-[#095b35]' : ''
-                }`}
-                onClick={() => setSelectedCountry(country)}
-              >
-                <div className="h-40 bg-gray-100 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <FaMapMarkerAlt className={`text-4xl ${index % 2 === 0 ? 'text-[#095b35]' : 'text-[#03468a]'}`} />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{country.name}</h3>
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-1">Key Products:</h4>
-                    <ul className="list-disc list-inside text-gray-600">
-                      {country.products.map(product => <li key={product}>{product}</li>)}
-                    </ul>
-                  </div>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <FaShippingFast className="mr-2" />
-                    <span>Air & Sea Freight Available</span>
-                  </div>
-                </div>
+        {/* Additional Content Sections */}
+        <section className="space-y-12">
+          {/* Stats Section */}
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8">
+              Global Reach, Local Quality
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="text-4xl font-bold text-[#095b35] mb-2">50+</div>
+                <div className="text-gray-600">Countries Served</div>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Map + Details */}
-        <section className="bg-white rounded-xl shadow-md p-6 mb-12">
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Our Global Supply Network</h2>
-          <div className="relative w-full h-96 bg-gray-100 rounded-lg overflow-hidden">
-            <ComposableMap className="w-full h-full">
-              <ZoomableGroup center={[0, 20]} zoom={1}>
-                <Geographies geography={geoUrl}>
-                  {({ geographies }) =>
-                    geographies.map((geo) => (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        fill="#EAEAEC"
-                        stroke="#D6D6DA"
-                        style={{
-                          default: { outline: "none" },
-                          hover: { fill: "#E2E8F0", outline: "none" },
-                          pressed: { fill: "#E2E8F0", outline: "none" },
-                        }}
-                      />
-                    ))
-                  }
-                </Geographies>
-                {sourceCountries.map((country, index) => (
-                  <Marker key={country.name} coordinates={country.coordinates}>
-                    <g onClick={() => setSelectedCountry(country)} className="cursor-pointer">
-                      <circle
-                        r={6}
-                        fill={index % 2 === 0 ? "#095b35" : "#03468a"}
-                        stroke="#FFF"
-                        strokeWidth={2}
-                      />
-                      <text
-                        x={0}
-                        y={-10}
-                        textAnchor="middle"
-                        fill={index % 2 === 0 ? "#095b35" : "#03468a"}
-                        fontWeight="bold"
-                        fontSize={14}
-                      >
-                        {country.name}
-                      </text>
-                    </g>
-                  </Marker>
-                ))}
-              </ZoomableGroup>
-            </ComposableMap>
-          </div>
-
-          {selectedCountry && (
-            <div className="mt-6 bg-[#f8fafc] rounded-lg p-6 border border-gray-200">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-xl font-bold text-[#095b35] mb-2">{selectedCountry.name}</h3>
-                  <h4 className="text-md font-semibold text-gray-700 mb-3">Key Products:</h4>
-                  <ul className="list-disc list-inside text-gray-600 mb-4">
-                    {selectedCountry.products.map((product) => (
-                      <li key={product}>{product}</li>
-                    ))}
-                  </ul>
-                  <p className="text-gray-600">{selectedCountry.details}</p>
-                </div>
-                <button onClick={() => setSelectedCountry(null)} className="text-gray-500 hover:text-gray-700">✕</button>
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="text-4xl font-bold text-[#03468a] mb-2">1M+</div>
+                <div className="text-gray-600">Annual Shipments</div>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="text-4xl font-bold text-[#22c55e] mb-2">98%</div>
+                <div className="text-gray-600">Customer Satisfaction</div>
               </div>
             </div>
-          )}
-
-          <div className="mt-4 flex flex-wrap justify-center gap-4">
-            {sourceCountries.map((country, index) => (
-              <div
-                key={country.name}
-                className={`flex items-center px-3 py-1 rounded-full cursor-pointer ${
-                  selectedCountry?.name === country.name ? 'bg-[#095b35] text-white' : 'bg-gray-100'
-                }`}
-                onClick={() => setSelectedCountry(country)}
-              >
-                <span className={`w-3 h-3 rounded-full ${index % 2 === 0 ? 'bg-[#095b35]' : 'bg-[#03468a]'} mr-2`}></span>
-                <span className="text-sm">{country.name}</span>
-              </div>
-            ))}
           </div>
-        </section>
 
-        {/* Certifications */}
-        <section className="bg-gradient-to-r from-[#095b35] to-[#03468a] text-white rounded-xl shadow-md p-8">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-              <FaCertificate className="text-6xl opacity-90" />
-            </div>
-            <div className="md:w-2/3 md:pl-8">
-              <h2 className="text-2xl font-bold mb-4">International Certifications</h2>
-              <p className="text-white text-lg">We comply with ISO, HACCP, Halal, and other global food safety certifications to ensure the highest quality for our customers.</p>
+          {/* Why Choose Us */}
+          <div className="bg-gradient-to-r from-[#095b35] to-[#03468a] text-white p-12 rounded-2xl">
+            <h2 className="text-3xl font-bold mb-8 text-center">Why Choose Us?</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">🌍</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Global Network</h3>
+                    <p className="text-gray-200">Sourcing from 5 continents</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">⭐</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Premium Quality</h3>
+                    <p className="text-gray-200">Stringent quality controls</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">🚚</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Fast Logistics</h3>
+                    <p className="text-gray-200">Global cold chain network</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">📜</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Certifications</h3>
+                    <p className="text-gray-200">ISO, HACCP, Halal certified</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

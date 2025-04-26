@@ -1,65 +1,67 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
+import { useState } from "react";
 import { RiFacebookFill, RiTwitterFill, RiLinkedinFill, RiInstagramFill } from "react-icons/ri";
 
 export const metadata = {
-  title: "Products | Bostan Group Inc.",
-  description: "Top quality meat and seafood products from around the world.",
+  title: "Seafood Products | Bostan Group Inc.",
+  description: "Premium quality seafood products sourced globally",
 };
 
-const products = [
+const seafoodProducts = [
   {
-    id: "beef",
-    category: "Premium Beef",
-    description: "Sourced from the finest farms globally with custom cutting options",
-    image: "./cae5856b-55bd-4f02-9f92-b30bbc72de59.jfif",
-    content: `Welcome to our company, where we pride ourselves on delivering the finest beef sourced from across the globe. While we 
-    have a strong commitment to Canadian beef, our extensive supply network allows us to meet the diverse needs of our 
-    customers by sourcing exceptional beef from various countries renowned for their quality. We understand that quality, 
-    safety, and consistency are paramount...`,
-    items: ["AAA Canadian Beef", "Wagyu Beef", "Angus Beef"]
+    id: "black-tiger",
+    category: "Black Tiger Shrimp",
+    description: "Premium quality shrimp with various size options",
+    image: "/images/black-tiger.jpg",
+    content: `Our Black Tiger Shrimp are sourced from the cleanest waters, offering superior taste and texture. 
+    Available in multiple sizes and packaging options to meet your specific needs.`,
+    items: [
+      { size: "16/20", country: "India", price: "$7.30/lb" },
+      { size: "21/25", country: "Viet/Thai", price: "$7.70/lb" },
+      { size: "26/30", country: "Thailand", price: "$8.80/lb" },
+    ]
   },
   {
-    id: 'seafood',
-    category: "Seafood Excellence",
+    id: "white-shrimp",
+    category: "White Shrimp",
     description: "Wild-caught & farmed options with complete customization",
-    image: "./9e48a862-b8b2-4e04-8bc7-a9a0b1adbeae.jfif",
-    content: `Welcome to our seafood section, where we proudly offer an extensive selection of the freshest and highest-quality seafood 
-    sourced from oceans and farms around the globe. Our shrimp collection is unmatched, featuring all sizes available with 
-    shell, peeled, and deveined options...`,
-    items: ["Wild Salmon", "Tuna", "Lobster", "Shrimp Varieties"]
+    image: "/images/white-shrimp.jpg",
+    content: `Premium White Shrimp available in various sizes and processing options. 
+    Perfect for restaurants, retailers, and seafood distributors.`,
+    items: [
+      { size: "16/20", country: "India", price: "$6.25/lb" },
+      { size: "21/25", country: "Vietnam", price: "$5.45/lb" },
+      { size: "26/30", country: "China", price: "$5.10/lb" },
+    ]
   },
   {
-    id: 'poultry',
-    category: "Premium Poultry",
-    description: "Canadian & imported fresh/frozen options",
-    image: "./66d63f64-4171-4072-8e0f-68325b834508.jfif",
-    content: `Welcome to our poultry section, where we specialize in providing a comprehensive range of poultry products tailored to 
-    meet the diverse needs of our customers. Our selection includes all kinds of poultry, from light fowl to heavy fowl...`,
-    items: ["Free-range Chicken", "Organic Turkey", "Duck"]
+    id: "ez-peel",
+    category: "EZ Peel IQF Headless",
+    description: "Convenient peeled and deveined options",
+    image: "/images/ez-peel.jpg",
+    content: `Individually Quick Frozen (IQF) shrimp for maximum freshness and convenience. 
+    Perfect for food service operations and quick meal preparation.`,
+    items: [
+      { size: "16-20", country: "Vietnam", price: "$5.05/tray" },
+      { size: "21-25", country: "Thailand", price: "$5.90/tray" },
+      { size: "26-30", country: "Ecuador", price: "$5.55/tray" },
+    ]
   },
-  {
-    id: 'lamb',
-    category: "Lamb & Goat",
-    description: "Whole carcasses to specialty cuts",
-    image: "./f8d5ff4f-dbed-44d1-b5c0-1cdf259cd87c.jfif",
-    content: `Welcome to our Lamb and Goat section, where we take pride in being the best supplier for traders and distributors seeking 
-    high-quality lamb and goat products. Our extensive selection encompasses everything from whole carcasses to a diverse 
-    array of cuts...`,
-    items: ["Whole Carcasses", "Specialty Cuts", "Skinned/Skin-on Options"]
-  }
 ];
 
- export default function ProductsContent() {
+export default function ProductsContent() {
+  const [selectedProduct, setSelectedProduct] = useState(seafoodProducts[0]);
+
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
       {/* Hero Section */}
       <section className="text-center py-20 bg-gradient-to-r from-[#095b35] to-[#03468a] text-white">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Premium Products</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Premium Seafood Products</h1>
           <p className="text-lg max-w-2xl mx-auto">
-            Quality meat and seafood solutions for distributors, wholesalers, and foodservice providers
+            Quality seafood solutions for distributors, wholesalers, and foodservice providers
           </p>
         </div>
       </section>
@@ -67,7 +69,7 @@ const products = [
       {/* Navigation Links */}
       <div className="sticky top-0 z-10 bg-white shadow-md">
         <div className="container mx-auto px-6 py-4 flex overflow-x-auto gap-4">
-          {products.map((product) => (
+          {seafoodProducts.map((product) => (
             <Link 
               key={product.id}
               href={`#${product.id}`}
@@ -80,7 +82,7 @@ const products = [
       </div>
 
       {/* Product Sections */}
-      {products.map((product, index) => (
+      {seafoodProducts.map((product, index) => (
         <section 
           key={product.id}
           id={product.id}
@@ -101,38 +103,65 @@ const products = [
             <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
               <h2 className="text-3xl font-bold text-[#095b35] mb-4">{product.category}</h2>
               <p className="text-gray-600 mb-6">{product.content}</p>
+              
               <div className="bg-[#f8fafc] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Key Offerings:</h3>
-                <ul className="space-y-2">
-                  {product.items.map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-gray-700">
-                      <span className="w-2 h-2 bg-[#095b35] rounded-full"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="text-xl font-semibold mb-4">Product Specifications</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-[#03468a] text-white">
+                      <tr>
+                        <th className="p-3 text-left">Size</th>
+                        <th className="p-3 text-left">Origin</th>
+                        <th className="p-3 text-left">Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {product.items.map((item, idx) => (
+                        <tr key={idx} className="border-b hover:bg-blue-50">
+                          <td className="p-3 font-medium">{item.size}</td>
+                          <td className="p-3">{item.country}</td>
+                          <td className="p-3 text-[#03468a] font-semibold">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="mt-6 grid grid-cols-2 gap-4">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-sm">Certifications</h4>
+                  <p className="text-sm mt-1">HACCP, BRC, ASC Certified</p>
+                </div>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-sm">Packaging</h4>
+                  <p className="text-sm mt-1">Vacuum Sealed IQF</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
       ))}
 
-      {/* About Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-[#03468a] mb-8">About Bostan Group</h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            At Bostan Group, we are passionate about providing high-quality meat and seafood products. 
-            Established with a commitment to excellence, we serve traders, distributors, wholesalers, 
-            and supermarkets globally. Our mission is to be your trusted partner in delivering premium 
-            products that meet the evolving needs of your customers through sustainable sourcing and 
-            rigorous quality control.
-          </p>
+      {/* Footer Section */}
+      <footer className="bg-[#03468a] text-white py-12">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <p className="text-sm">📞 587-717-8930</p>
+            <p className="text-sm">📧 info@bostangroup.com</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
+            <div className="flex gap-4">
+              <RiFacebookFill className="text-2xl" />
+              <RiTwitterFill className="text-2xl" />
+              <RiLinkedinFill className="text-2xl" />
+              <RiInstagramFill className="text-2xl" />
+            </div>
+          </div>
         </div>
-      </section>
-
-  
+      </footer>
     </main>
   );
 }
-
